@@ -1,0 +1,107 @@
+/* Styles for InputBar.jsx */
+
+/* Uses variables from index.css */
+
+.input-bar {
+  display: flex;
+  align-items: flex-end; /* Align items to bottom for varying heights */
+  padding: 20px 25px; /* Increased padding */
+  background-color: var(--background-light);
+  border-top: 1px solid var(--border-color);
+  flex-shrink: 0;
+  gap: 15px; /* Gap between textarea and button */
+}
+
+.input-bar textarea {
+  flex-grow: 1;
+  padding: 12px 18px; /* Adjusted padding */
+  border: 1px solid var(--border-color);
+  border-radius: 8px; /* Less round */
+  /* margin-right: 15px; Removed, use gap */
+  font-size: 1rem; /* Use base font size */
+  line-height: 1.5;
+  resize: none;
+  min-height: calc(1rem * 1.5 + 24px + 2px); /* Approx 1 line height + padding + border */
+  max-height: 150px; /* Increased max height */
+  overflow-y: auto;
+  font-family: inherit;
+  color: var(--text-primary);
+  background-color: var(--background-light);
+  box-shadow: none; /* Remove inset shadow */
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.input-bar textarea::placeholder {
+  color: var(--text-muted); /* Use variable */
+}
+
+.input-bar textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Softer focus ring */
+}
+
+.input-bar textarea:disabled {
+  background-color: var(--background-medium);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.input-bar button {
+  padding: 12px 20px; /* Adjusted padding */
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--user-bubble-text);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 8px; /* Match textarea */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.1s ease, box-shadow 0.1s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(1rem * 1.5 + 24px + 2px); /* Match textarea initial height */
+  line-height: 1.5; /* Match textarea line-height */
+}
+
+.input-bar button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 2px 5px rgba(0, 86, 179, 0.3); /* Add subtle shadow on hover */
+}
+
+.input-bar button:active { 
+  transform: scale(0.96); /* Slightly more pronounced press */
+  background-color: #004a99; /* Even darker blue */
+  box-shadow: none; /* Remove shadow when pressed */
+}
+
+.input-bar button:disabled {
+  background-color: var(--secondary-color);
+  opacity: 0.5; /* More muted */
+  cursor: not-allowed;
+  transform: none; /* No press effect when disabled */
+}
+
+/* Add simple arrow using ::after */
+.input-bar button::after {
+    content: '→';
+    margin-left: 8px;
+    font-size: 1.2em; /* Make arrow slightly larger */
+    line-height: 1;
+}
+
+.input-bar button.loading::after { 
+    /* Hide arrow when loading if needed */
+    content: ''; 
+    margin-left: 0;
+}
+
+/* Optional: Style for loading state (e.g., pulsing) */
+.input-bar button:disabled {
+  /* Add pulsing animation if needed */
+}
+.input-bar button.loading {
+   /* Specific style for loading state */
+   /* E.g., adding a spinner or changing text */
+} 

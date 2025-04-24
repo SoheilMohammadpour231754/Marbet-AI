@@ -1,0 +1,13 @@
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-core>=0.3.52,<0.4.0
+ollama>=0.4.4
+langchain-ollama>=0.3.2,<0.4.0
+chromadb>=0.4.24,<0.5.0
+pymupdf>=1.23.24,<1.24.0
+python-dotenv>=1.0.1,<1.1.0
+flask>=3.0.0,<3.1.0
+Flask-Cors>=4.0.0
+unstructured[pdf]>=0.13.0  # For handling complex PDFs including OCR needs
+pytesseract>=0.3.10,<0.4.0 # OCR engine wrapper
+langchain-google-genai 

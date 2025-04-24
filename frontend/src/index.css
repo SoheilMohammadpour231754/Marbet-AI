@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Color Palette */
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-light: #ffffff;
+  --background-medium: #f8f9fa; /* Main chat window background */
+  --background-dark: #f0f2f5;   /* Body background */
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --text-muted: #6c757d;
+  --border-color: #dee2e6;
+  --user-bubble-bg: var(--primary-color);
+  --user-bubble-text: #ffffff;
+  --ai-bubble-bg: #eef2f7; /* Slightly bluish grey, better contrast */
+  --ai-bubble-text: var(--text-primary);
+  --error-bg: #f8d7da;
+  --error-text: #721c24;
+  --error-border: #f5c6cb;
+  --link-color: #0056b3;
+
+  /* Typography */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --base-font-size: 16px; /* Slightly larger base */
+
+  /* Base Styles */
+  font-family: var(--font-family-sans);
+  font-size: var(--base-font-size);
+  line-height: 1.6;
+  font-weight: 400;
+
+  color-scheme: light; /* Force light mode for consistency */
+  color: var(--text-primary);
+  background-color: var(--background-dark);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+#root {
+  /* Add flex properties to center the direct child (App container) */
+  display: flex;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  width: 100%; /* Ensure it spans full width */
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-family-sans);
+  /* Apply navy-to-black gradient */
+  background: linear-gradient(180deg, #0a192f 0%, #000000 100%); /* Navy to Black */
+  /* Ensure gradient covers full viewport height even if content is short */
+  background-attachment: fixed;
+  /* Remove the solid background-color fallback */
+  /* background-color: var(--background-dark); */
+  /* Remove flex from body, let #root handle app centering */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none; /* Remove underline by default */
+}
+
+a:hover {
+  text-decoration: underline;
+}

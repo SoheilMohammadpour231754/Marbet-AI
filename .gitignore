@@ -1,0 +1,22 @@
+# Virtual environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Vector Store Data (usually generated)
+data/vector_store/
+
+# IDE files
+.idea/
+.vscode/
+
+# Other OS/Editor files
+.DS_Store
+*.log
+*.bak
+
+# Environment variables
+.env 

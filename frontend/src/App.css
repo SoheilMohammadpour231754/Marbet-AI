@@ -1,0 +1,67 @@
+/* Reset some browser defaults */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Uses variables defined in index.css */
+
+/* Overall app container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh; /* Force minimum height */
+  max-height: 90vh; /* Keep maximum height */
+  max-width: 560px; /* Keep reduced max width */
+  min-width: 560px; /* Add minimum width */
+  margin: auto; /* Centers horizontally and vertically in flex container */
+  background-color: var(--background-light);
+  border-radius: 12px; /* Slightly larger radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Slightly softer shadow for smaller size */
+  overflow: hidden;
+  /* Removed border, shadow provides separation */
+  /* Removed explicit font-family, inherited from body */
+}
+
+/* Header */
+.app-header {
+  background-color: var(--background-light);
+  padding: 18px 25px; /* Slightly more padding */
+  border-bottom: 1px solid var(--border-color);
+  text-align: left; /* Align title left */
+  flex-shrink: 0;
+}
+
+.app-header h1 {
+  font-size: 1.15rem; /* Adjusted size */
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Main chat area */
+.chat-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--background-medium);
+}
+
+/* Error message */
+.error-message {
+  padding: 12px 25px;
+  background-color: var(--error-bg);
+  color: var(--error-text);
+  border-bottom: 1px solid var(--error-border);
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* Ensure ChatWindow and InputBar are imported/used correctly if needed elsewhere */
