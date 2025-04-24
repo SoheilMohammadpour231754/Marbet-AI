@@ -6,7 +6,22 @@
   <img src="https://img.shields.io/badge/ChromaDB-Vector_Store-purple" alt="ChromaDB Vector Store"/>
 </div>
 
----
+<div align="center">
+  <figure>
+    <img src="./assets/demo_1.png" alt="Chat Interface Demo" width="80%">
+    <br>
+    <figcaption><i>Fig 1: ChatBot UI showing query and response</i></figcaption>
+  </figure>
+  
+  <br>
+  
+  <figure>
+    <img src="./assets/demo_2.png" alt="Chat Response with Citations" width="80%">
+    <br>
+    <figcaption><i>Fig 2: Response with source attribution</i></figcaption>
+  </figure>
+</div>
+
 
 ## 1. Introduction
 
@@ -31,7 +46,6 @@
 | **Citation Handling** | Extracts source filenames from citations and filters retrieved documents accordingly. |
 | **Interfaces** | CLI (`main.py`) and Flask API (`api.py`) for React frontend. |
 
----
 
 ## 2. Chatbot Design & Prompt Engineering
 
@@ -122,30 +136,10 @@ graph TD
   </tr>
 </table>
 
----
 
 ## 3. Knowledge Base Structuring
 
 ### Document Processing
-
-```python
-# Example document processing flow
-def process_documents():
-    # Load documents with metadata
-    documents = load_documents(config.PDF_DIRECTORY)
-    
-    # Split into chunks with appropriate size/overlap
-    chunks = split_documents(
-        documents, 
-        chunk_size=config.CHUNK_SIZE,
-        chunk_overlap=config.CHUNK_OVERLAP
-    )
-    
-    # Create/update vector store
-    vector_store = get_vector_store(chunks)
-    
-    return vector_store
-```
 
 - **Loading:** `load_documents` uses `UnstructuredPDFLoader` for PDFs with enhanced parameters
   - Adds `page` (from metadata, fallback to index) and `source` (filename) metadata
@@ -164,27 +158,8 @@ def process_documents():
   - Rebuilds if `config.FORCE_REBUILD_VECTOR_STORE` is `True` or store missing
   - Otherwise loads existing store for efficiency
 
----
 
-## 4. Testing & Results
-
-<div align="center">
-  <figure>
-    <img src="./assets/demo_1.png" alt="Chat Interface Demo" width="80%">
-    <figcaption><i>Fig 1: ChatBot UI showing query and response</i></figcaption>
-  </figure>
-  
-  <br>
-  
-  <figure>
-    <img src="./assets/demo_2.png" alt="Chat Response with Citations" width="80%">
-    <figcaption><i>Fig 2: Response with source attribution</i></figcaption>
-  </figure>
-</div>
-
----
-
-## 5. Conclusion & Future Improvements
+## 4. Conclusion & Future Improvements
 
 ### Summary
 
